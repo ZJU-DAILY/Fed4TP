@@ -1,0 +1,21 @@
+# general
+seed: 42
+workers: 8
+dataset_dir: "./datasets"
+
+# train options
+batch_size: 128
+image_size: 224
+start_epoch: 1000
+epochs: 1000
+
+# model options
+resnet: "ResNet34" # ResNet18 / ResNet34 / ResNet50
+feature_dim: 128
+reload: False
+
+# loss options
+learning_rate: 0.0003
+weight_decay: 0.
+instance_temperature: 0.5
+cluster_temperature: 1.0

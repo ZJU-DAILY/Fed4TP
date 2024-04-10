@@ -1,0 +1,29 @@
+fedtfp:
+  mg_use: True
+  tm_use: True
+  gd_use: True
+use_gpu: True
+federate:
+  method: FedAvg
+  client_num: 6
+  mode: standalone
+  total_round_num: 100
+  process_num: 1
+data:
+  file_path: data/PeMS04/
+  data_file: PeMS04.npy
+  type: PeMS04
+  splits: [ 0.8,0.1,0.1 ]
+dataloader:
+  batch_size: 32
+model:
+  type: fedgru
+  task: regression
+  output_size: 1
+criterion:
+  type: MSELoss
+train:
+  local_update_steps: 10
+  batch_or_epoch: epoch
+  optimizer:
+    lr: 0.01
